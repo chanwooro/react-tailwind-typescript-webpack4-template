@@ -1,7 +1,7 @@
 
 import home from './home';
 import { connect } from 'react-redux'
-import { addValue } from './action';
+import { addValue } from './redux/action';
 import { Dispatch } from 'redux';
 
 type ComponentProp ={

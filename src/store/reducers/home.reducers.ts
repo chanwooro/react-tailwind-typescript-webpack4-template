@@ -8,7 +8,7 @@ const initState: IHome = {
   counter: 0
 };
 
-export const Home = (state = initState, action: any) => {
+export const Home = (state: IHome = initState, action: any): IHome => {
   switch (action.type) {
     case CONST.ADD:
       const counter = state.counter + 100;

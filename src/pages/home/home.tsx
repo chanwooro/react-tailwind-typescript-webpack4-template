@@ -1,26 +1,29 @@
 import React from 'react';
+import {IHome} from './home.d';
 
-type HomeProps = {
-    counter: number,
-    addValue: () => void,
-    test1?: string
-}
+const Home = ({counter, addValue, nullableProp, parentString}: IHome) => {
 
-const Home = ({counter, addValue}: HomeProps) => {
-    
     React.useEffect(() => {
         addValue();
     }, [])
 
     return (
-        <div onClick={addValue}>{counter}</div>
+        <div onClick={addValue}>
+            {counter}
+            <div>
+                {nullableProp}
+            </div>
+            <div>
+                {parentString}
+            </div>
+        </div>
     )
 }
 
 Home.defaultProps = {
     counter: 0,
     addValue: () => {},
-    test1: 'testset'
+    nullableProp: 'Nullable prop string'
 }
 
 export default Home;

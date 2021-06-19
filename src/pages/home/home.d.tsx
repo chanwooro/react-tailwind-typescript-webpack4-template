@@ -11,4 +11,4 @@ export declare interface IParentProps {
     parentString?: string
 }
 
-export type IHome = IMapStateToProps & IMapDispatchToProps & IParentProps;
+export type IHomeProps = IMapStateToProps & IMapDispatchToProps & IParentProps;

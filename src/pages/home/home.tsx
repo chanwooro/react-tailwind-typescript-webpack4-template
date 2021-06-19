@@ -1,7 +1,7 @@
 import React from 'react';
-import {IHome} from './home.d';
+import {IHomeProps} from './home.d';
 
-const Home = ({counter, addValue, nullableProp, parentString}: IHome) => {
+const Home = ({counter, addValue, nullableProp, parentString}: IHomeProps) => {
 
     React.useEffect(() => {
         addValue();

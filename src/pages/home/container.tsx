@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { addValue } from '@actions/home.actions';
 import { IApplicationState } from "@reducers/index";
 import { Dispatch } from 'redux';
-import {IMapStateToProps, IMapDispatchToProps, IParentProps} from './home.d';
+import {IMapStateToProps, IMapDispatchToProps} from './home.d';
 
 const mapStateToProps = (state: IApplicationState): IMapStateToProps => ({
     counter: state.Home.counter

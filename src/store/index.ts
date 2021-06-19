@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
-import {home} from '../pages/home/redux/reducer';
+import {reducers} from '@reducers/index';
 
 const composeEnhancers =
   (process.env.NODE_ENV === 'development' &&
@@ -8,9 +8,7 @@ const composeEnhancers =
     (<any> window).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
   compose;
 
-const reducer = combineReducers({
-  home
-});
+const reducer = combineReducers(reducers);
 
 export function configureStore() {
   return createStore(reducer, composeEnhancers(

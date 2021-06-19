@@ -2,6 +2,10 @@ const path = require('path');
 const hwp = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const pathDefiner = (targetPath) => {
+    return path.join(__dirname, 'src', targetPath);
+}
+
 module.exports = {
     entry: './src/index.tsx',
     output: {
@@ -41,7 +45,12 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['*', '.js', '.ts', '.tsx']
+        extensions: ['*', '.js', '.ts', '.tsx'],
+        alias: {
+            "@actions": pathDefiner('store/actions'),
+            "@reducers": pathDefiner('store/reducers'),
+            "@constants": pathDefiner('store/constants')
+        }
     },
     plugins: [
         new MiniCssExtractPlugin({

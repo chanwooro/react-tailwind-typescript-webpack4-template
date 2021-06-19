@@ -1,20 +1,16 @@
 
 import home from './home';
 import { connect } from 'react-redux'
-import { addValue } from './redux/action';
+import { addValue } from '@actions/home.actions';
+import { IApplicationState } from "@reducers/index";
 import { Dispatch } from 'redux';
 
-type ComponentProp ={
-    home: number
-}
-
-const mapStateToProps = (state: ComponentProp) => ({
-    test: state.home
+const mapStateToProps = (state: IApplicationState) => ({
+    counter: state.Home.counter
 })
-  
+
 const mapDispatchToProps = (dispatch: Dispatch) => ({
     addValue: () => dispatch(addValue())
 })
-  
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(home);
+
+export default connect(mapStateToProps, mapDispatchToProps)(home);

@@ -1,17 +1,26 @@
 import React from 'react';
 
 type HomeProps = {
-    test: number,
-    addValue: () => void
+    counter: number,
+    addValue: () => void,
+    test1?: string
 }
 
-const Home = ({test, addValue}: HomeProps) => {
+const Home = ({counter, addValue}: HomeProps) => {
+    
     React.useEffect(() => {
         addValue();
     }, [])
+
     return (
-        <div>{test}</div>
+        <div onClick={addValue}>{counter}</div>
     )
+}
+
+Home.defaultProps = {
+    counter: 0,
+    addValue: () => {},
+    test1: 'testset'
 }
 
 export default Home;

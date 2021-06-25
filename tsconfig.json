@@ -22,7 +22,8 @@
     "paths": {
       "@actions/*": ["store/actions/*"],
       "@reducers/*": ["store/reducers/*"],
-      "@constants/*": ["store/constants/*"]
+      "@constants/*": ["store/constants/*"],
+      "@assets/*": ["assets/*"]
     }
   }
 }
